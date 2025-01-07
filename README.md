@@ -21,4 +21,4 @@ El *-n* es el número de peticiones, y la *-c* es la concurrencia, y por último
 
 ## Ejecutando el CLUSTER
 
-En el archivo *primary.js*, tenemos la inicialización de los cluster, haciendo referencia a donde tenemos el código de nuestro servidor. En mi caso, se van a ejecutar 6 CLUSTERS, dado que mi ordenador solo tiene 6 núcleos.
+En el archivo *primary.js*, tenemos la inicialización de los cluster, haciendo referencia a donde tenemos el código de nuestro servidor. En mi caso, se van a ejecutar 6 CLUSTERS, dado que mi ordenador solo tiene 6 núcleos. Todo esto se ejecuta en el mismo puerto, que puede ser el *3000*, por ejemplo.
