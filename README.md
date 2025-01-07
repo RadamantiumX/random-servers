@@ -17,3 +17,8 @@ npx loadtest -n 1200 -c 400 -k http://localhost:3000/heavy
 ```
 
 El *-n* es el número de peticiones, y la *-c* es la concurrencia, y por último, la ULR donde queremos analizar.
+
+
+## Ejecutando el CLUSTER
+
+En el archivo *primary.js*, tenemos la inicialización de los cluster, haciendo referencia a donde tenemos el código de nuestro servidor. En mi caso, se van a ejecutar 6 CLUSTERS, dado que mi ordenador solo tiene 6 núcleos.
