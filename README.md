@@ -8,3 +8,12 @@ Las arquitecturas modernas consisten en varias replicas de ese servidor NODE, qu
 
 
 Esto es lo que se llama **CLUSTER**, varios servidores interconectados, responsables de atender las peticiones del cliente. Esto no quiere decir que cada uno de estos procesos sepa la existencia del otro, solo comparten los recursos.
+
+
+## EJECUTANDO LOG COMMAND
+
+```bash
+npx loadtest -n 1200 -c 400 -k http://localhost:3000/heavy
+```
+
+El *-n* es el número de peticiones, y la *-c* es la concurrencia, y por último, la ULR donde queremos analizar.
