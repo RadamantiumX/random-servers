@@ -1,4 +1,5 @@
 import express from 'express'
+import { Worker } from 'worker_threads'
 
 const app = express()
 const port = 3000
@@ -8,11 +9,19 @@ app.get("/non-blocking/", (req, res)=>{
 })
 
 app.get("/blocking", async (req, res)=>{
-    let counter = 0
-    for(let i = 0; i < 20_000_000_000; i++){
-        counter ++
-    }
-    res.status(200).send(`result is ${counter}`)
+    const worker = new Worker("./worker.js") // le pasamos el nombre del archivo que se encuentra en el mismo directorio
+
+    // Primer evento
+    worker.on("message", (data)=>{
+        res.status(200).send(`results is ${data}`)
+    })
+
+    // Segundo evento --> Capturamos algún error
+    worker.on("error", (error)=>{
+        res.status(404).send(`An error occurred ${error}`)
+    })
+
+    
 })
 
 app.listen(port, ()=>{
