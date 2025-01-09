@@ -3,6 +3,10 @@ import express from 'express'
 const app = express()
 const port = 3000
 
+app.get("/", (req, res)=>{
+    res.status(200).send(`The app is working on port: ${port}`)
+})
+
 app.get("/user", (req, res)=>{
     res.status(200).send("You are logging in")
 })
