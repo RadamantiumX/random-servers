@@ -75,10 +75,12 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 // })
 
 // FORK
+// Va a estar a la escucha del *message*
+// Esto nos permite comunicarnos con los otros procesos
 const forkProcessorPath = path.resolve(__dirname, 'forkProcessor.js')
 const forkedChild = fork(forkProcessorPath)
-forkedChild.on('message', (msg)=>{
-    console.log('Message from data processor exhange', msg)
+forkedChild.on('message', (msg)=>{ // Recimos el mensaje del HIJO
+    console.log('Message from data processor exhange', msg) // Mostramos el mensaje del HIJO
 })
 
-forkedChild.send({ hello: 'world' })
+forkedChild.send({ hello: 'world' }) // Enviamos este mensaje al HIJO
