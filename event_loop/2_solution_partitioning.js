@@ -11,6 +11,7 @@ const asyncInterval = setInterval(() => {
       /*
         The Promise lets other tasks proceed concurrently, while waiting for the setImmediate() callback to execute. This prevents the main thread from being blocked.
       */
+     // Las promesas impiden que se BLOQUEE el proceso principal
       new Promise((res) =>
   
         /*
