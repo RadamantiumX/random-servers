@@ -1,7 +1,10 @@
+// Particionamos con PROMISES para que la THREAD principal no se bloquee
+
 const asyncInterval = setInterval(() => {
     console.log("Event loop executed");
   }, 1);
   
+
   const findPrimeAsync = async (num) => {
     let i;
     let primes = [2, 3];

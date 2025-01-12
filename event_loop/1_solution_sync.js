@@ -1,3 +1,4 @@
+// Es con CONCURRENCIA, por lo tanto, SYNCRONIC
 // Esta es una FUNCION COSTOSA, lo cual BLOQUERÁ el EVENT LOOP
 const syncInterval = setInterval(()=>{
     console.log("Event loop executed")
