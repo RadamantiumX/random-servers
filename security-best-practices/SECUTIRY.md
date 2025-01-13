@@ -39,3 +39,21 @@ Esto quiere decir, todo lo que se espera por parte del CLIENTE.
 npm i jsonschema
 ```
 
+
+## Escaping HTML & CSS
+
+```bash
+npm i escape-html
+```
+
+El servidor también puede enviar código HTML y CSS, y es muy importante escaparlos, es para evitar la inyección de código. Utilizando esa librería podremos poner mas seguridad en nuestro proyecto.
+
+
+## ORM/ODM against Injections
+
+Esto va de la mano con lo anterior, pero tiene que ver mas con la comunición a la BASE DE DATOS. Los ORM son un capa adicional entre el servidor y la DB. Es para las consultas, pero mas sencillas de aplicar, un ejemplo puede ser PRISMA ORM. Esto ayuda y sanitiza mucho las QUERYS.
+
+
+## Security Linter
+
+Agregas reglas adicionales a nuestro código.
