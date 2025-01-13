@@ -42,3 +42,4 @@ Ya utilizando el *.gitignore*, que evitar que *empujemos* hacia el repositorio a
 
 ![alt text](image-3.png)
 
+Es muy similar a *Working Threads*, pero este permite una *Isolación* completa de un proceso, separado del proceso principal. En el caso que deseemos que el USER tenga que utilizar un proceso separado, jamás debemos permitirle que el mismo específique el archivo con el cual va a correrlo.
