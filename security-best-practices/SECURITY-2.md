@@ -30,4 +30,18 @@ npm i rat-limiter-flexible
 
 ## Authentication Limits
 
-Ahora, siguiendo con el ámbito de las limitaciones, pasamos a la AUTENTICACIONES. Es una buena práctica bloquear una cuenta de usuario cuando este falla repetidamente un intento de AUTENTICACION.
+Ahora, siguiendo con el ámbito de las limitaciones, pasamos a la AUTENTICACIONES. Es una buena práctica bloquear una cuenta de usuario cuando este falla repetidamente un intento de AUTENTICACION. Podemos utilizar la libreria anterior para limitar este asunto. 
+
+
+## HTTP response headers & helmet
+
+```bash
+npm i helmet
+```
+
+Define todos los HEADERS que uno va a necesitar en un proyecto.
+
+
+## Vulnerability Inspection
+
+No es tan aplicable en proyectos pequeños, porque normalmente no se utilizan muchos paquetes. Pero, como sabemos, cada paqueteria depende muchos otros paquetes dentro del mismo.
