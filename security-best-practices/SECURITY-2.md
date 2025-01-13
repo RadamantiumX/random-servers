@@ -25,7 +25,7 @@ No hay que darle la posibilidad a un usuario atacante de especificar que archivo
 En anteriores veces, se mencionó de limitar la cantidad de REQUEST que puede recibir el servidor, todo esto para evitar los ataques de DOS. Lo mismo ocurre con este item, el tamaño del archivo recibido, tambien puede perjudicar el normal funcionamiento del servidor, y es por eso que se debe limitar al usuario. Podemos utilizar la siguiente librería para ese propósito.
 
 ```bash
-npm i rat-limiter-flexible
+npm i rate-limiter-flexible
 ```
 
 ## Authentication Limits
