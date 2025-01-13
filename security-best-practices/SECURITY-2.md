@@ -44,4 +44,10 @@ Define todos los HEADERS que uno va a necesitar en un proyecto.
 
 ## Vulnerability Inspection
 
-No es tan aplicable en proyectos pequeños, porque normalmente no se utilizan muchos paquetes. Pero, como sabemos, cada paqueteria depende muchos otros paquetes dentro del mismo.
+No es tan aplicable en proyectos pequeños, porque normalmente no se utilizan muchos paquetes. Pero, como sabemos, cada paqueteria depende muchos otros paquetes dentro del mismo. Cada uno de estos paquetes dentro de NODE tiene algun problema de vulnerabilidad, que se deben solucionar antes de enviarlos a producción.
+Una posible solución sería:
+
+```bash
+npm audit [fix | signatures]
+```
+
