@@ -28,3 +28,14 @@ npm i bcrypt
 Es para administrar sesiones, es una buena practica de seguridad incluir ***Blacklisting*** en los JWT TOKENS. Los JWT viven en el CLIENTE, pero son emitidos por el SERVIDOR, pero no hay forma que este último revoque los JWT, supongamos que se vea comprometido, y ahora queremos que el CLIENTE ya no tenga este JWT, ahi es donde entra el ***Blacklisting***. Lo primero que debemos hacer es guardar la sesion de JWT en la BASE DE DATOS. 
 Las JWT ya tienen fecha de vencimiento, y si las guardamos en la BD, podemos ver con claridad cuales fueron comprometidas.
 Una solución mas efectiva sería guardar dos TOKENS en la BD, el TOKEN que va expirar, y el TOKEN de actualización, que es uno diferente.
+
+
+## JSON Schema Validation
+
+Todo lo que llega al servidor es vulnerable, USER INPUT, REQUEST de data, etc. En estas situaciones, podemos tener un SCHEMA REQUEST, para el BODY que vienen del CLIENTE.
+Esto quiere decir, todo lo que se espera por parte del CLIENTE.
+
+```bash
+npm i jsonschema
+```
+
