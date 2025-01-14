@@ -40,7 +40,7 @@ export class AppError extends Error {
 
         this.name = name;
         this.httpCode = httpCode;
-        this.isOperational = isOperational; // Hacemos que el ERROR sea predecible, o algo relacionado a la tarea asignada
+        this.isOperational = isOperational; // Hacemos que el ERROR sea predecible, o algo relacionado a la tarea asignada, con esto, facilita la solución de este error
         
         // No es standar en V8
         // Crea una nueva propiedad en instancia del Error class
