@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 
     // Mucha data
     // Del lado del cliente (en proyectos web, por ejemplo), tenemos el localStorage, cache, etc.
-    const hugeArray = new Array(100000000).fill(req) // fill --> reemplaza todos los elementos por un valor
+    // const hugeArray = new Array(100000000).fill(req) // fill --> reemplaza todos los elementos por un valor
     // Utilizar *memcached* --> npm i memcached
     
 
@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
     id: 1,
     username: 'Inefficient User',
     badObject: req, // Referencia *ciclica* --> son malas prácticas, apunta al objeto de la REQ orginal
-    hugeArray 
+    // hugeArray 
    }
    
    // No hay nada que remueva a este EVENTO
@@ -42,12 +42,12 @@ app.get('/', (req, res) => {
    // Tienen que haber un *removeListener*, de otra forma, quedan atorados en la memoria
    // eventEmitters.rawListeners('start')
 
-  const resWithTimeout = setTimeout(()=>{ // Hay que asignar el TIMER a una variable para que no se quede atascado en la memoria
+  setTimeout(()=>{ // Hay que asignar el TIMER a una variable para que no se quede atascado en la memoria
     res.send('Hello world')
    })
 
    // Hay que limpiar el TIMER, para que no se quede atascado en la memoria
-   clearTimeout(resWithTimeout)
+ //  clearTimeout(resWithTimeout)
 })
 
 app.listen(port, ()=>{

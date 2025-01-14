@@ -26,3 +26,7 @@ El motor en el cual funciona NODE JS, tiene la capacidad de mostrarnos unas inst
 ```bash
 $ node --inspec index.js
 ```
+
+Al correrlo en el navegador, podemos tomar SNAPSHOOT de nuestra APLICACION.
+
+También podemos utilizar PM2 a traves de los LOGS que nos dispone.
