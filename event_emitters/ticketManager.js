@@ -2,7 +2,7 @@ import { TicketManager } from "./ticketManager.js";
 import { EmailService } from "./emailService.js";
 import { DatabaseService } from "./databaseService.js";
 
-const ticketManager = new TicketManager(3)
+const ticketManager = new TicketManager(3) // Le pasamos el valor de "supply" que es de 3
 const emailService = new EmailService()
 const databaseService = new DatabaseService()
 
