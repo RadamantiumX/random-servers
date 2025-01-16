@@ -18,3 +18,8 @@ ticketManager.on('error', (email, price, timestamp)=> {
 })
 
 ticketManager.buy('test1@email.com', 10)
+
+// Este evento se activa si intentamos llamar al evento "buy" nuevamente
+ticketManager.once("buy", () => {
+    console.log("This is only called once");
+});
