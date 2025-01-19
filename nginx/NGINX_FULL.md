@@ -101,4 +101,34 @@ Lo detenemos con:
 ```bash
 docker stop <<id_contenedor>>
 ```
-Pero, en este caso, vamos a correr 3 instancias de la aplicación en vez de solo una.
+
+Pero, en este caso, vamos a correr 3 instancias de la aplicación en vez de solo una. Y para necesitamos de DOCKER COMPOSE, con el archivo *docker-compose.yml*.
+
+*docker-compose.yaml*
+
+```yaml
+version: '3'
+services:
+  app1:
+    build: .
+    environment:
+      - APP_NAME=App1
+    ports:
+      - "3001:3000"
+
+  app2:
+    build: .
+    environment:
+      - APP_NAME=App2
+    ports:
+      - "3002:3000"  
+
+  app3:
+    build: .
+    environment:
+      - APP_NAME=App3
+    ports:
+      - "3003:3000         
+```
+
+Tenemos 3 servicios definidos utilizando el mismo archivo *Docker*. Podemos utilzar la variable de entorno *APP_NAME*, de este archivo, dentro de la aplicación. Los puertos tienen que ser diferentes entre las aplicaciones que creamos, no pueden ser el mismo.
