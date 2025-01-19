@@ -61,3 +61,39 @@ events {
 ```
 
 Estos contienen DIRECTIVAS de un contexto en específico.
+
+
+## Inicio Proyecto de práctica NGINX
+
+Creamos un proyecto sencillo, utilizando *Node Js* el cual se va a DOCKERIZAR donde tendremos 3 instancias de esta misma app como CONTENEDORES.
+Setemos el archivo DOCKER de esta manera:
+
+```yml
+FROM node:14
+
+WORKDIR /app
+
+COPY server.js
+COPY index.html
+COPY package.json
+
+RUN npm install
+
+EXPOSE 3000
+
+CMD ["node", "server.js"]
+```
+
+En el nuevo directorio */app* es donde se van a copiar los archivos, lo definimos como el directorio de trabajo. En el *CMD* es como iniciamos la aplicación de forma local.
+Para poder ver las imagenes disponibles utilizamos el siguiente comando:
+
+```bash
+dcoker images | grep <<Nombre_de_la_App>>
+```
+
+Para correr el contenedor:
+
+```bash
+docker run -p 3000:3000 <<Nombre_de_la_App:version>>
+```
+
