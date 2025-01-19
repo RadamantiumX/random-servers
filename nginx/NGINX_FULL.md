@@ -128,7 +128,12 @@ services:
     environment:
       - APP_NAME=App3
     ports:
-      - "3003:3000         
+      - "3003:3000"         
 ```
 
-Tenemos 3 servicios definidos utilizando el mismo archivo *Docker*. Podemos utilzar la variable de entorno *APP_NAME*, de este archivo, dentro de la aplicación. Los puertos tienen que ser diferentes entre las aplicaciones que creamos, no pueden ser el mismo.
+Tenemos 3 servicios definidos utilizando el mismo archivo *Docker*. Podemos utilzar la variable de entorno *APP_NAME*, de este archivo, dentro de la aplicación. Los puertos tienen que ser diferentes entre las aplicaciones que creamos, no pueden ser el mismo, pero dentro del contenedor siempre va a utilizar el puerto 3000.
+Ya teniendo toda la configuración completa, podemos iniciar *DOCKER COMPOSE*:
+
+```bash
+docker-compose up --build -d
+```
