@@ -96,4 +96,9 @@ Para correr el contenedor:
 ```bash
 docker run -p 3000:3000 <<Nombre_de_la_App:version>>
 ```
+Lo detenemos con:
 
+```bash
+docker stop <<id_contenedor>>
+```
+Pero, en este caso, vamos a correr 3 instancias de la aplicación en vez de solo una.
