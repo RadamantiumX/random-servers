@@ -137,3 +137,6 @@ Ya teniendo toda la configuración completa, podemos iniciar *DOCKER COMPOSE*:
 ```bash
 docker-compose up --build -d
 ```
+
+Así se iniciaran los 3 contenedores corriendo, podemos verificarlo con el comando *docker ps*. Hasta aquí, podemos acceder a cada una de los *réplicas* por separado, o sea, *localhost:3001, localhost:3002 y localhost:3003*, pero lo que queremos es un *punto de entrada*, y es ahí donde entre *NGINX*, además podemos añadir una conexión mas segura para nuestra aplicación.
+
