@@ -146,4 +146,4 @@ Modificamos el archivo *nginx.conf*, pero antes, ingremos los permisos necesario
 $ sudo chmod a+rwx <<Filename>>
 ```
 
-De esta manera, ya estamos autorizados a modificar el archivo en cuestión.
+De esta manera, ya estamos autorizados a modificar el archivo en cuestión. La configuración a realizar, se va a tratar de que NGINX sea el PROXY de los 3 contenedores (en este ejemplo), se ejecutará localmente y dará equilibrio a la carga de solicitudes hacia ellas.
