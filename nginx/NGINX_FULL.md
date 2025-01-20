@@ -147,3 +147,10 @@ $ sudo chmod a+rwx <<Filename>>
 ```
 
 De esta manera, ya estamos autorizados a modificar el archivo en cuestión. La configuración a realizar, se va a tratar de que NGINX sea el PROXY de los 3 contenedores (en este ejemplo), se ejecutará localmente y dará equilibrio a la carga de solicitudes hacia ellas.
+
+**NGINX es una especie de escudo que da acceso parcial al servidor, por medio del PROXY. Solo se podrá ver lo que se solicite en el CLIENTE. La IP expuesta es la de NGINX, y no la del SERVER original.**
+
+
+## Iniciar NGINX
+
+Una vez finalizada la configuración, podemos dar inicio a NGINX
