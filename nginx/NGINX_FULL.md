@@ -153,4 +153,31 @@ De esta manera, ya estamos autorizados a modificar el archivo en cuestión. La c
 
 ## Iniciar NGINX
 
-Una vez finalizada la configuración, podemos dar inicio a NGINX
+Una vez finalizada la configuración, podemos dar inicio a NGINX, utilizando el comando *nginx*. Luego, verificamos en la URL *http://localhost:8080*.
+
+
+## Seguridad con NGINX
+
+Para poder encriptar los datos con NGINX, debemos utilzar una conexión segura a traves del *https*, y para eso primero necesitamos un certificado del mismo. Se puede generar uno de forma local, es un *certificado autofirmado*. 
+En producción, los certificados son generado por autoridades oficiales, que validan la legitimidad de nuestro certificado.
+
+### Generando el certificado local SSL
+
+Primero, tenemos que crear el directorio donde pondremos esos certificados. Y luego, utilizamos el siguiente comando:
+
+```bash
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout nginx-selfsigned.key -out nginx-selfsigned.crt
+```
+
+*Nos hará algunas preguntas para la configuración.*
+
+La directiva *openssl*, es una herramienta para generar *keys*, certificados y conexiones seguras.
+El certificado SSL esta conformado por dos partes, la LLAVE PRIVADA (*private key*) y la LLAVE PUBLICA (*public key*). Esos archivos van a ser generados automáticamente.
+
+***Es muy importante resetear NGINX cuando hayamos modificado alguna configuración y se pueda sobrescribir la antigua.***
+
+```bash
+nginx -s reload
+```
+
+*Reseteamos NGINX ⬆️ (ver comandos con: nginx -h). O también utilizar sudo systemctl reload nginx, para el reset.*
