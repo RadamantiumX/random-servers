@@ -181,3 +181,15 @@ nginx -s reload
 ```
 
 *Reseteamos NGINX ⬆️ (ver comandos con: nginx -h). O también utilizar sudo systemctl reload nginx, para el reset.*
+
+*Detenemos y limpiamos NGINX.*
+
+```bash
+nginx -s stop
+```
+
+*Verificamos procesos NGINX.*
+
+```bash
+ps aux | grep nginx
+```
