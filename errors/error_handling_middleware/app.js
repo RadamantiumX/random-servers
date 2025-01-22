@@ -1,4 +1,6 @@
 import express from 'express'
+import { CustomError } from './utils/CustomError.js'
+import { errorController } from './controllers/errorController.js'
 
 const port = 3000
 const app = express()
@@ -8,22 +10,15 @@ app.get('/', (req, res) => {
 })
 
 app.all('*', (req, res, next) => {
-    const err = new Error(`Can't find ${req.originalUrl} on this server`)
-    err.status = 'fail'
-    err.statusCode = 404
-
+    // const err = new Error(`Can't find ${req.originalUrl} on this server`)
+    // err.status = 'fail'
+    // err.statusCode = 404
+    const err = new CustomError(`Can't find ${req.originalUrl} on this server`, 404)
     next(err)// Llamamos al GLOBAL ERROR HANDLING MIDDLEWARE
 })
 
-// Basic handling middleware error
-app.use((error, req, res, next)=>{
-    error.statusCode = error.statusCode || 500 // Error interno
-    error.status = error.status || 'error' // Error del servidor
-    res.status(error.statusCode).json({
-        status: error.statusCode,
-        message: error.message,
-    })
-})
+// Basic handling middleware error for all errors
+app.use(errorController)
 
 app.listen(port, ()=>{
     console.log(`App listening on http://localhost:${port}`)
