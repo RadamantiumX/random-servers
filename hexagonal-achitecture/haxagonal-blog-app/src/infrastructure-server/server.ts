@@ -1,6 +1,6 @@
 // src/infrastructure/server/server.ts
 import express from "express";
-import postController from "../../adapters/controllers/postController";
+import router from "../adapters/controllers/postController";
 import mongoose from "mongoose";
 
 export const connect = async () => {
@@ -18,7 +18,7 @@ const app = express();
 connect();
 
 app.use(express.json());
-app.use(postController);
+app.use(router);
 
 app.use((err: Error, req: any, res: any, next: any) => {
   console.error(err.stack);
