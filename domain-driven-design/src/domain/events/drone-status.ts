@@ -4,4 +4,4 @@ export class DroneStatus {
       public status: string,
       public updatedAt: Date
     ) {}
-  }
+  } 
