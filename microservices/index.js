@@ -1,4 +1,5 @@
 import UserService from './services/user.service.js';
+import EmailService from './services/email.service.js';
 // import { ServiceBroker } from "moleculer";
 // const broker = new ServiceBroker()
 
@@ -25,6 +26,7 @@ import UserService from './services/user.service.js';
 async function startApp() {
     // Inciando Servicios
     await UserService.start()
+    await EmailService.start()
 
     try{
         // Simulate User creation
@@ -40,12 +42,21 @@ async function startApp() {
 
         // Obtenemos los Usuarios    
         const users = await UserService.call('users.getUsers')
-        console.log('Users:', users)
+        console.log('All Users:', users)
+
+        // Simulando envio de EMAIL
+        const emailResult = await EmailService.call('email.sendEmail', {
+            recipient: newUser.email,
+            subject: 'Welcome to our platform!',
+            content: 'We are glad you joined us!'
+        })
+        console.log(emailResult)
     }catch(err){
          console.error('Error:', err)
     } finally {
-        // Detenemos el Servicio sin importar que suceda
+        // Detenemos los Servicios sin importar que suceda
         await UserService.stop()
+        await EmailService.stop()
     }
 }
 
