@@ -1,5 +1,6 @@
 import UserService from './services/user.service.js';
 import EmailService from './services/email.service.js';
+import AuthService from './services/auth.service.js';
 // import { ServiceBroker } from "moleculer";
 // const broker = new ServiceBroker()
 
@@ -27,6 +28,7 @@ async function startApp() {
     // Inciando Servicios
     await UserService.start()
     await EmailService.start()
+    await AuthService.start()
 
     try{
         // Simulate User creation
@@ -51,12 +53,20 @@ async function startApp() {
             content: 'We are glad you joined us!'
         })
         console.log(emailResult)
+
+        // Simulando la autenticación
+        const authResult = await AuthService.call('auth.authUser', {
+            username: 'admin',
+            password: 'password'
+        })
+        console.log('Auth result:',authResult)
     }catch(err){
          console.error('Error:', err)
     } finally {
         // Detenemos los Servicios sin importar que suceda
         await UserService.stop()
         await EmailService.stop()
+        await AuthService.stop()
     }
 }
 
