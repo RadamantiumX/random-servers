@@ -1,0 +1,2 @@
+20250506	22:35:56	fhhhki122-ssa111-sdsda225	logger message here
+20250506	22:36:26	fhhhki122-ssa111-sdsda225	another message
