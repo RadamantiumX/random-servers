@@ -21,7 +21,7 @@ async function fileSyncronized(message, fileLog) {
     }
 }
 
-fileSyncronized('another message','index.txt')
+fileSyncronized('another','index.txt')
 
 
 
